@@ -16,6 +16,9 @@ const TestRunner = class TestRunner {
         this.testCount = 0;
     }
 
+    /*
+    * Iterates through the test cases and invoke the corresponding function
+    */
     runTests() {
         let errors = [];
         let successes = 0;
@@ -49,6 +52,9 @@ const TestRunner = class TestRunner {
         });
     }
 
+    /*
+    * Determines the number of cases to be teted
+    */
     getTestCount() {
         Object.entries(this.tests).forEach(([key, val]) => {
             this.testCount += Object.entries(val).length;
@@ -56,6 +62,14 @@ const TestRunner = class TestRunner {
         return this.testCount;
     }
 
+    /*
+    * Outputs the test reports based on the provide metrics
+    * 
+    * @param {limit} the number of cases under test)
+    * @param {successes} number of successful test cases
+    * @param {errors} array of cases that failed
+    * 
+    */
     generateTestReport(limit, successes, errors) {
         console.log('');
         console.log(`\x1b[33m----------BEGIN TEST REPORT----------\x1b[0m`);

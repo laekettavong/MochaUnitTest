@@ -2,7 +2,6 @@
 * Unit Tests
 */
 
-
 // Dependencies
 const assert = require('assert');
 const lib = require('./../app/lib');
@@ -13,6 +12,8 @@ const Colors = lib.Colors;
 
 // Container for tests
 const unit = {};
+
+// Test case counter
 let testCounter = 1;
 
 /* ----- StringUtils Test Cases ----- */
@@ -196,7 +197,6 @@ unit[`[${testCounter++}] NumberUtils.getMaxValue, should fail when not all eleme
     }, TypeError);
 }
 
-
 // Test case 25
 unit[`[${testCounter++}] NumberUtils.getMaxValue, should pass, highest value should be 127 from [44, 12 , 99, 3, 50, 127, 95, 7]`] = (done) => {
     assert.doesNotThrow(() => {
@@ -212,7 +212,6 @@ unit[`[${testCounter++}] NumberUtils.getMinValue, should fail when not all eleme
         done();
     }, TypeError);
 }
-
 
 // Test case 27
 unit[`[${testCounter++}] NumberUtils.getMinValue, should pass, lowedt value should be -95 from [44, -12 , 13, -50, 27, -95, 1, 207, 0]`] = (done) => {

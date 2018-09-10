@@ -2,8 +2,13 @@
 * Arbitrary functions to be tested agains
 */
 
-
 const StringUtils = class StringUtils {
+    /*
+    * DDetemines whether the specified sctring is a palindrome
+    * 
+    * @param {str} string to check
+    * 
+    */
     static isPalindrome(str) {
         try{
             str = this.isTypeOfNumber(str) ? str.toString() : str;
@@ -26,6 +31,12 @@ const StringUtils = class StringUtils {
         }
     }
 
+    /*
+    * Parses through the specified string an capitalize the tokens that are separated by white space
+    * 
+    * @param {str} target string to capitalize
+    * 
+    */
     static capitalizeAllFirstLetter(str) {
         if(this.isTypeOfString(str)) {
             let strArray =  str.split(" ");
@@ -39,14 +50,32 @@ const StringUtils = class StringUtils {
         }
     }
 
-    static isTypeOfString(dataType) {
-        return typeof(dataType) === 'string';
+    /*
+    * Determines whether the specified string is of string type
+    * 
+    * @param {str} target string
+    * 
+    */
+    static isTypeOfString(str) {
+        return typeof(str) === 'string';
     }
 
-    static isTypeOfNumber(dataType) {
-        return typeof(dataType) == 'number';
+    /*
+    * Determines whether the specified argument is of number type
+    * 
+    * @param {str} target string
+    * 
+    */
+    static isTypeOfNumber(str) {
+        return typeof(str) == 'number';
     }
 
+    /*
+    * Globally removes all white space fromt eh sepcified string
+    * 
+    * @param {str} target string
+    * 
+    */
     static removeWhiteSpace(str) {
         if(this.isTypeOfString(str) || this.isTypeOfNumber(str)) {
             if(str) {
@@ -58,7 +87,14 @@ const StringUtils = class StringUtils {
     }
 }
 
+
 const NumberUtils = class NumberUtils {
+    /*
+    * Fetches the highest value in a given array
+    * 
+    * @param {numberArray} target array to scan
+    * 
+    */
     static getMaxValue(numberArray) {
         if(!numberArray || !(numberArray instanceof Array) || numberArray.length == 0) throw Error('Invalid argument');
 
@@ -69,6 +105,12 @@ const NumberUtils = class NumberUtils {
         return numberArray[0];
     }
 
+    /*
+    * Fetches the lowest value in a given array
+    * 
+    * @param {numberArray} target array to scan
+    * 
+    */
     static getMinValue(numberArray) {
         if(!numberArray || !(numberArray instanceof Array) || numberArray.length == 0) throw Error('Invalid argument');
 
@@ -79,10 +121,17 @@ const NumberUtils = class NumberUtils {
         return numberArray[0];
     }
 
+    /*
+    * Simple counter that invokes the provided callback
+    * 
+    * @param {num} max number to count to
+    * @param {callback}
+    * 
+    */
     static countTo(num, callback) {
         if(StringUtils.isTypeOfNumber(num)) {
             let counter = 0;
-            while(counter < num) {
+            while(counter <= num) {
                 counter++;
             }
             callback(true, 'Done');
@@ -97,17 +146,30 @@ const DateUtils = class DateUtils extends Date {
       super(dateStr);
     }
   
+    /*
+    * Determines whether this date comes before the specified date
+    * 
+    * @param {date} date to check against
+    * 
+    */
     before(date) {
         if(!(date instanceof Date)) throw new Error('Invalid datatype');
         return this.valueOf() < date.valueOf();
     }
 
+    /*
+    * Determines whether this date comes after the specified date
+    * 
+    * @param {date} date to check against
+    * 
+    */
     after(date) {
         if(!(date instanceof Date)) throw new Error('Invalid datatype');
         return this.valueOf() > date.valueOf();
     }
 }
-  
+
+// Color sonstants for console
 const Colors = {
     RED : '\x1b[31m%s\x1b[0m',
     GREEN : '\x1b[32m%s\x1b[0m',
