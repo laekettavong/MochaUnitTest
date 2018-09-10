@@ -79,7 +79,7 @@ const StringUtils = class StringUtils {
     static removeWhiteSpace(str) {
         if(this.isTypeOfString(str) || this.isTypeOfNumber(str)) {
             if(str) {
-                return str.replace(/\W/gi, '');
+                return str.replace(/\s/gi, '');
             }
         } else {
             throw new Error('Invalid datatype');

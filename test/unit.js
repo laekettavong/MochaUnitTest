@@ -36,26 +36,26 @@ unit[`[${testCounter++}] StringUtils.isTypeOfString should fail when argument is
 }
 
 // Test case 4
-unit[`[${testCounter++}] StringUtils.isTypeOfString should fail when argument is undefined`] = (done) => {
+unit[`[${testCounter++}] StringUtils.isTypeOfString should pass when argument is undefined and expected result is false`] = (done) => {
     let notDefined;
     assert.equal(StringUtils.isTypeOfString(notDefined), false);
     done();
 }
 
 // Test case 5
-unit[`[${testCounter++}] StringUtils.isTypeOfString should fail when argument is an object literal`] = (done) => {
+unit[`[${testCounter++}] StringUtils.isTypeOfString should pass when argument is an object literal and expected result is false`] = (done) => {
     assert.equal(StringUtils.isTypeOfString({'hello' : 'world'}), false);
     done();
 }
 
 // Test case 6
-unit[`[${testCounter++}] StringUtils.isTypeOfString should fail when argument isa boolean`] = (done) => {
+unit[`[${testCounter++}] StringUtils.isTypeOfString should pass when argument is a boolean and the expected result is false`] = (done) => {
     assert.equal(StringUtils.isTypeOfString(true), false);
     done();
 }
 
 // Test case 7
-unit[`[${testCounter++}] StringUtils.isPalindrome should fail when argument is abcdecba`] = (done) => {
+unit[`[${testCounter++}] StringUtils.isPalindrome should pass when argument is abcdecba and the expected result is false`] = (done) => {
     assert.equal(StringUtils.isPalindrome('abcdecba'), false);
     done();
 }
@@ -67,13 +67,13 @@ unit[`[${testCounter++}] StringUtils.isPalindrome, 'nurses run' is a palindrome`
 }
 
 // Test case 9
-unit[`[${testCounter++}] StringUtils.isPalindrome, 'madam' is a palindrome - should pass`] = (done) => {
+unit[`[${testCounter++}] StringUtils.isPalindrome, 'madam' is a palindrome`] = (done) => {
     assert.equal(StringUtils.isPalindrome('madam'), true);
     done();
 }
 
 // Test case 10
-unit[`[${testCounter++}]StringUtils.isPalindrome, 'madam' is a palindrome - should fail`] = (done) => {
+unit[`[${testCounter++}]StringUtils.isPalindrome, should fail when it is asserted that the result would be false when 'abba' is a palindrome`] = (done) => {
     assert.equal(StringUtils.isPalindrome('madam'), false);
     done();
 }
@@ -222,7 +222,7 @@ unit[`[${testCounter++}] NumberUtils.getMinValue, should pass, lowedt value shou
 }
 
 // Test case 28
-unit[`[${testCounter++}] NumberUtils.getMinValue, should fail when an empty array is passed in]`] = (done) => {
+unit[`[${testCounter++}] NumberUtils.getMinValue, should fail when an empty array is passed in`] = (done) => {
     assert.doesNotThrow(() => {
         NumberUtils.getMinValue([]);
         done();
