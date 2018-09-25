@@ -1,3 +1,2 @@
-# SimpleTestRunner
-A simple test runner to demonstrate the bare bones approach to writing unit tests using nothing more than Node's native assertion module. In that no third-party libraries were used. To that end, various string, number, and date utility functions were created and tested against for behavior predictability when they are invoked with numerous values and data types.
-
+# MochaUnitTest
+Like [SimpleTestRunner](https://github.com/laekettavong/SimpleTestRunner), this is a simple demonstration on how to create/run unit tests against a few arbitrary string, number, and date functions. Unlike SimpleTestRunner, this uses `mocha`, `chai` assertion/expect, and `eslint`. To that end, corresponding utility classes were created and tested against for behavior predictability when they are invoked with expected and unexpected arguments.

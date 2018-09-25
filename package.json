@@ -1,0 +1,30 @@
+{
+  "name": "mochaunittest",
+  "version": "1.0.0",
+  "description": "A simple unit test demo using Mocha and Chai.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "check": "eslint ./app/lib.js ./test/app.js && mocha",
+    "test": "mocha",
+    "lint": "eslint ./app/lib.js ./test/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laekettavong/MochaUnitTest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laekettavong/MochaUnitTest/issues"
+  },
+  "homepage": "https://github.com/laekettavong/MochaUnitTest#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^5.6.0",
+    "mocha": "^5.2.0"
+  }
+}
